@@ -9,6 +9,13 @@ MIT
 
 Resources
 ----
-UART controller $130 https://www.sparkfun.com/products/10972
+=$105 SparkFun= 
+https://www.sparkfun.com/products/10972
+
+
+=$130 Atlas Scientific=
+http://www.atlas-scientific.com/product_pages/kits/ph-kit.html
+
+Code Sample
 http://atlas-scientific.com/_files/code/pi_sample_code.pdf
 And I helped!
