@@ -1,0 +1,60 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+{{super()}}
+<meta http-equiv="refresh" content="60">
+{% endblock %}
+
+
+{% block navbar %}
+{% include "header.html" %}
+{% endblock %}
+
+{% block metas %}
+{{super()}}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+  <div class="col-md-9">
+    <div id='chart' class="chart" style="height: 100px; width: 500px"></div>
+  </div>
+    <div class="col-md-3">
+      <br /><br />
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script>
+			var chart_id = {{ chartID|safe }}
+			var series = {{ series|safe }}
+			var title = {{ title|safe }}
+			var xAxis = {{ xAxis|safe }}
+			var yAxis = {{ yAxis|safe }}
+			var chart = {{ chart|safe }}
+		</script>
+
+<script>
+$(document).ready(function() {
+	$('#chart').highcharts({
+		chart: chart,
+		title: title,
+		xAxis: xAxis,
+		yAxis: yAxis,
+		series: series
+	});
+});
+</script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+{% endblock %}
+
